@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surevy Dashboard</title>
+
+    <!-- Include Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+
+    <!-- Include Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()"
+          >×</a
+        >
+
+        <h3 style="padding-left: 20px;">All Infrastructure</h3>
+        <hr />
+        <ul>
+          <ul id="menu-list"></ul>
+        </ul>
+
+        <!--...
+        <p id="activeLinkLabel">Selected:</p> 
+        -->
+      </nav>
+      <span class="open-btn" onclick="openNav()">☰</span>
+      <!-- Main Content -->
+      <main class="content" id="main">
+        <div class="grid-container">
+          <div class="grid-item" id="map"></div>
+          <div class="grid-item" id="table">
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Infrastructure Type</th>
+                    <th>Village Name</th>
+              
+                  </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+              </table>
+            </div>
+          </div>
+          <!-- piechart grid items -->
+          <div class="grid-item" id="piecrt">
+            <canvas id="pieChart"></canvas>
+          </div>
+          <!-- columnchart grid items -->
+          <div class="grid-item" id="columnchart">
+            <canvas id="columnChart"></canvas>
+          </div>
+          
+          <!-- table grid items -->
+          <div class="grid-item" id="table-container">
+          </div>
+
+          <!-- grid item 3 
+          <div class="grid-item grid-item-card" id="chartWithCards">
+            <div class="chart-section">
+              <div class="chart-container">
+                <canvas id="lineChart" width="600" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+          -->
+          <!-- description grid items -->
+          <div class="grid-item" id="informatics">
+            <div class="card-section">
+              <div class="card-container">
+                <!-- Eight cards go here -->
+                <div class="card">
+                  Total Entries
+                  <div class="tne" style="text-align: center; padding-top: 20px">
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Village Number
+                  <div
+                    class="village-count"
+                    style="text-align: center; padding-top: 20px"
+                  >
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Total Area Covered
+                  <div
+                    class="total_area"
+                    style="text-align: center; padding-top: 20px"
+                  >
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Total Benficiary
+                  <div
+                    class="benf"
+                    style="text-align: center; padding-top: 20px"
+                  >
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Total Benficiary
+                  <div
+                    class="MaleFemale"
+                    style="text-align: center; padding-top: 20px"
+                  >
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Average Income
+                  <div
+                    class="AvgInc"
+                    style="text-align: center; padding-top: 20px"
+                  >
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Average Age
+                  <div
+                    class="AvgAge"
+                    style="text-align: center; padding-top: 20px"
+                  >
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+                <div class="card">
+                  Average Household
+                  <div
+                    class="AvgHH"
+                    style="text-align: center; padding-top: 20px"
+                  >
+                    <!-- The card for displaying the total number of entries will be inserted here -->
+                    <!-- It will be added dynamically using JavaScript -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Call openNav when the page loads on desktop
+      window.onload = function () {
+        if (window.innerWidth > 768) {
+          openNav();
+        }
+      };
+    </script>
+    <!-- js file linkup -->
+    <script src="js/menu.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/leaflet.js"></script>
+  </body>
+</html>
